@@ -1,7 +1,7 @@
 {
   "name": "snap-swiper",
   "version": "1.0.1",
-  "description": "实现一个很简单的自动轮播的效果",
+  "description": "基于css的scroll-snap-type实现自动轮播的效果插件",
   "main": "snap-swiper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
