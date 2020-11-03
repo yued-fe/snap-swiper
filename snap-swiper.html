@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>snap-swiper 实现轮播滚动</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="./snap-swiper.css">
+</head>
+
+<body>
+  <div class="snap-swiper-index"></div>
+</body>
+<script type="module">
+
+  import {SnapSwiper} from './snap-swiper.js'
+  var imageList = [{
+    href: "https://www.yuewen.com/#&about",
+    src: "https://bossaudioandco1252317822.image.myqcloud.com/activity/document/7a252584150962528ae3c5ebec79d879.jpeg",
+    alt: "内容1"
+  }, {
+    href: "https://www.yuewen.com/#&about",
+    src: "https://qidian.gtimg.com/yuewen/v1/css/images/yw-hd-ft.jpg",
+    alt: "内容2"
+  }, {
+    href: "https://www.yuewen.com/#&about",
+    src: "https://bossaudioandcomic-1252317822.image.myqcloud.com/activity/document/d2e93dead4b760eb2385709f42f3aec7.jpg",
+    alt: "内容3"
+  }]
+  SnapSwiper(imageList, ".snap-swiper-index")
+</script>
+
+</html>
