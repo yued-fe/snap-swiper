@@ -1,10 +1,11 @@
- function SnapSwiper(imageList, root) {
-   var data = {
-     imageList,
-     timer: ""
+ function SnapSwiper(data) {
+   data = {
+     timer: "",
+     autoplay: true,
+     ...data
    }
 
-   data.eleSwiperRoot = document.querySelector(root);
+   data.eleSwiperRoot = document.querySelector(data.el);
    data.fragment = document.createDocumentFragment();
 
    // 创建根元素
@@ -80,7 +81,7 @@
      eleTarget.classList.add("active");
    });
 
-   SnapSwiper.prototype.automaticHandler(this.data.imageList, this.data.eleSwiperBox);
+   this.data.autoplay ? SnapSwiper.prototype.automaticHandler(this.data.imageList, this.data.eleSwiperBox) : "";
  }
 
  // polyfill Safari浏览器下的平滑滚动
@@ -117,4 +118,10 @@
    }, 3000)
  }
 
+ // 某一个元素被点击 
+ SnapSwiper.prototype.clickHandler = function (el, cb) {
+   el.addEventListener("click", function () {
+     cb()
+   });
+ }
  module.exports = SnapSwiper

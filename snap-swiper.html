@@ -10,9 +10,8 @@
 <body>
   <div class="snap-swiper-index"></div>
 </body>
-<script type="module">
-
-  import {SnapSwiper} from './snap-swiper.js'
+<script src="./snap-swiper.js"></script>
+<script>
   var imageList = [{
     href: "https://www.yuewen.com/#&about",
     src: "https://bossaudioandco1252317822.image.myqcloud.com/activity/document/7a252584150962528ae3c5ebec79d879.jpeg",
@@ -25,8 +24,27 @@
     href: "https://www.yuewen.com/#&about",
     src: "https://bossaudioandcomic-1252317822.image.myqcloud.com/activity/document/d2e93dead4b760eb2385709f42f3aec7.jpg",
     alt: "内容3"
-  }]
-  SnapSwiper(imageList, ".snap-swiper-index")
+  }, {
+    href: "https://www.yuewen.com/#&about",
+    src: "https://qidian.gtimg.com/yuewen/v1/css/images/yw-hd-ft.jpg",
+    alt: "内容2"
+  }, {
+    href: "https://www.yuewen.com/#&about",
+    src: "https://bossaudioandcomic-1252317822.image.myqcloud.com/activity/document/d2e93dead4b760eb2385709f42f3aec7.jpg",
+    alt: "内容3"
+  }, ]
+  console.log('[SnapSwiper]', );
+
+  SnapSwiper({
+    imageList,
+    el: ".snap-swiper-index",
+    autoplay: false
+  })
+  SnapSwiper.prototype.clickHandler(document.querySelector(".snap-swiper-index"), function () {
+    console.log('[元素被点击了]');
+
+  })
+  // SnapSwiper.prototype.setScrollLeft(700)
 </script>
 
 </html>
