@@ -1,11 +1,19 @@
 {
   "name": "snap-swiper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于css的scroll-snap-type实现自动轮播的效果插件",
   "main": "snap-swiper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yued-fe/snap-swiper"
+  },
+  "keywords": [
+    "snap-swiper"
+  ],
+  "homepage": "https://github.com/yued-fe/snap-swiper"
 }
