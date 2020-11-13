@@ -112,9 +112,13 @@
      var index = Math.floor(_this.data.eleSwiperBox.scrollLeft / clientWidth) + 1;
 
      if (index > _this.data.imageList.length - 1) {
+       _this.data.eleSwiperBox.style.scrollBehavior = 'auto'
        index = 0;
+       _this.data.eleSwiperBox.scrollLeft = clientWidth * index + _this.data.eleSwiperBox.offsetLeft * index;
+     } else {
+       _this.data.eleSwiperBox.style.scrollBehavior = 'smooth'
+       SnapSwiper.prototype.setScrollLeft(clientWidth * index + _this.data.eleSwiperBox.offsetLeft * index);
      }
-     SnapSwiper.prototype.setScrollLeft(clientWidth * index + _this.data.eleSwiperBox.offsetLeft * index);
    }, 3000)
  }
 
@@ -124,4 +128,4 @@
      cb()
    });
  }
- module.exports = SnapSwiper
+ //  module.exports = SnapSwiper
