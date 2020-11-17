@@ -1,9 +1,6 @@
  function SnapSwiper(data) {
-   data = {
-     timer: "",
-     autoplay: true,
-     ...data
-   }
+   data.timer = ''
+   data.autoplay === false ? data.autoplay : data.autoplay = true
 
    data.eleSwiperRoot = document.querySelector(data.el);
    data.fragment = document.createDocumentFragment();
@@ -60,9 +57,16 @@
    this.data.eleSwiperRoot.appendChild(this.data.fragment)
 
    this.data.eleSwiperBox.addEventListener("touchstart", function () {
+
+     clearInterval(_this.data.timer);
+   });
+   this.data.eleSwiperBox.addEventListener("mousemove", function () {
+     console.log('[速度速度是的]');
+
      clearInterval(_this.data.timer);
    });
    document.addEventListener("touchend", function () {
+
      SnapSwiper.prototype.automaticHandler();
    });
 
@@ -128,4 +132,6 @@
      cb()
    });
  }
- //  module.exports = SnapSwiper
+ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+   module.exports = SnapSwiper;
+ }
