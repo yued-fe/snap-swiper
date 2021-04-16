@@ -56,12 +56,12 @@
 
    this.data.eleSwiperRoot.appendChild(this.data.fragment)
 
-   this.data.eleSwiperBox.addEventListener("touchstart", function () {
-     clearInterval(_this.data.timer);
-   });
-   document.addEventListener("touchend", function () {
-     SnapSwiper.prototype.automaticHandler();
-   });
+   //  this.data.eleSwiperBox.addEventListener("touchstart", function () {
+   //    clearInterval(_this.data.timer);
+   //  });
+   //  document.addEventListener("touchend", function () {
+   //    SnapSwiper.prototype.automaticHandler();
+   //  });
 
    this.data.eleSwiperBox.addEventListener("scroll", function () {
 
@@ -122,6 +122,8 @@
  // 某一个元素被点击 
  SnapSwiper.prototype.clickHandler = function (el, cb) {
    el.addEventListener("click", function () {
+
+
      cb()
    });
  }
